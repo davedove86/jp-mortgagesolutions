@@ -1,0 +1,17 @@
+node_modules/
+.vercel/
+dist/
+.output/
+.nitro/
+.tanstack/
+.grok/
+screenshots/
+artifacts/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage/
+*.local
+routeTree.gen.ts
