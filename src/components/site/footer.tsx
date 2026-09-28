@@ -6,6 +6,8 @@ const quick = [
   { to: "/faqs", label: "FAQs" },
   { to: "/contact", label: "Contact" },
   { to: "/protection", label: "Protection" },
+  { to: "/privacy-policy", label: "Privacy Policy" },
+  { to: "/cookie-policy", label: "Cookie Policy" },
 ] as const;
 
 const mortgages = [
@@ -119,10 +121,10 @@ export function SiteFooter() {
               Website by Dove Design Ltd
             </a>
             <div className="flex flex-wrap gap-6">
-              <Link to="/privacy-policy" className="underline hover:text-bg">
+              <Link to="/privacy-policy" className="text-bg underline hover:text-primary">
                 Privacy Policy
               </Link>
-              <Link to="/cookie-policy" className="underline hover:text-bg">
+              <Link to="/cookie-policy" className="text-bg underline hover:text-primary">
                 Cookie Policy
               </Link>
             </div>
