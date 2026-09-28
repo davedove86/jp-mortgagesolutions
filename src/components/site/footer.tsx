@@ -6,8 +6,6 @@ const quick = [
   { to: "/faqs", label: "FAQs" },
   { to: "/contact", label: "Contact" },
   { to: "/protection", label: "Protection" },
-  { to: "/privacy-policy", label: "Privacy Policy" },
-  { to: "/cookie-policy", label: "Cookie Policy" },
 ] as const;
 
 const mortgages = [
