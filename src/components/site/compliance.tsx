@@ -104,72 +104,85 @@ export function FraudWarning() {
 
 export function JustInTimeNotice() {
   return (
-    <div className="space-y-3 border-2 border-fg bg-sand p-4 text-sm leading-relaxed text-fg">
-      <p>
-        Jodi Pyle Limited (trading as JP Mortgage Solutions) will be the
-        controller of the personal data you provide. We only collect basic
-        personal data about you, which does not include special category or
-        location-based information.
-      </p>
-      <p>
-        <span className="font-semibold">
-          Why do you need my data and what will it be used for?
+    <details className="group border-2 border-fg bg-sand text-sm leading-relaxed text-fg">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 font-semibold [&::-webkit-details-marker]:hidden">
+        How we use your personal data
+        <span className="inline-flex size-5 shrink-0 text-primary transition-transform group-open:rotate-45">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path
+              d="M25.3333 15.667V16.3336C25.3333 16.7018 25.0349 17.0003 24.6667 17.0003H17V24.667C17 25.0351 16.7015 25.3336 16.3333 25.3336H15.6667C15.2985 25.3336 15 25.0351 15 24.667V17.0003H7.3333C6.96511 17.0003 6.66663 16.7018 6.66663 16.3336V15.667C6.66663 15.2988 6.96511 15.0003 7.3333 15.0003H15V7.33365C15 6.96546 15.2985 6.66699 15.6667 6.66699H16.3333C16.7015 6.66699 17 6.96546 17 7.33365V15.0003H24.6667C25.0349 15.0003 25.3333 15.2988 25.3333 15.667Z"
+              fill="currentColor"
+            />
+          </svg>
         </span>
-        <br />
-        We need your basic personal data so we can contact you and respond to
-        your message, request or query. All personal data we process is processed
-        by our staff in the UK.
-      </p>
-      <p>
-        <span className="font-semibold">Who is my data shared with?</span>
-        <br />
-        Your data will only be shared with third parties if this is necessary to
-        respond to your request. If that is the case, we will seek your permission
-        before passing on your details.
-      </p>
-      <p>
-        <span className="font-semibold">How long do you keep my data for?</span>
-        <br />
-        We may store your data for up to six years after the end of any business
-        relationship, after which it will be securely destroyed. To object to
-        processing, contact{" "}
-        <a
-          href="mailto:info@jp-mortgagesolutions.co.uk"
-          className="font-semibold underline"
-        >
-          info@jp-mortgagesolutions.co.uk
-        </a>
-        .
-      </p>
-      <p>
-        <span className="font-semibold">What are my rights?</span>
-        <br />
-        You can object, request access, rectification, erasure or restriction.
-        Concerns:{" "}
-        <a
-          href="mailto:info@jp-mortgagesolutions.co.uk"
-          className="font-semibold underline"
-        >
-          info@jp-mortgagesolutions.co.uk
-        </a>
-        . You can also complain to the ICO at{" "}
-        <a
-          href="https://ico.org.uk"
-          className="font-semibold underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          https://ico.org.uk
-        </a>
-        .
-      </p>
-      <p>
-        Please also read our{" "}
-        <Link to="/privacy-policy" className="font-semibold underline">
-          Privacy Policy
-        </Link>{" "}
-        before submitting this form.
-      </p>
-    </div>
+      </summary>
+      <div className="space-y-3 border-t border-fg px-4 py-4">
+        <p>
+          Jodi Pyle Limited (trading as JP Mortgage Solutions) will be the
+          controller of the personal data you provide. We only collect basic
+          personal data about you, which does not include special category or
+          location-based information.
+        </p>
+        <p>
+          <span className="font-semibold">
+            Why do you need my data and what will it be used for?
+          </span>
+          <br />
+          We need your basic personal data so we can contact you and respond to
+          your message, request or query. All personal data we process is processed
+          by our staff in the UK.
+        </p>
+        <p>
+          <span className="font-semibold">Who is my data shared with?</span>
+          <br />
+          Your data will only be shared with third parties if this is necessary to
+          respond to your request. If that is the case, we will seek your permission
+          before passing on your details.
+        </p>
+        <p>
+          <span className="font-semibold">How long do you keep my data for?</span>
+          <br />
+          We may store your data for up to six years after the end of any business
+          relationship, after which it will be securely destroyed. To object to
+          processing, contact{" "}
+          <a
+            href="mailto:info@jp-mortgagesolutions.co.uk"
+            className="font-semibold underline"
+          >
+            info@jp-mortgagesolutions.co.uk
+          </a>
+          .
+        </p>
+        <p>
+          <span className="font-semibold">What are my rights?</span>
+          <br />
+          You can object, request access, rectification, erasure or restriction.
+          Concerns:{" "}
+          <a
+            href="mailto:info@jp-mortgagesolutions.co.uk"
+            className="font-semibold underline"
+          >
+            info@jp-mortgagesolutions.co.uk
+          </a>
+          . You can also complain to the ICO at{" "}
+          <a
+            href="https://ico.org.uk"
+            className="font-semibold underline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            https://ico.org.uk
+          </a>
+          .
+        </p>
+        <p>
+          Please also read our{" "}
+          <Link to="/privacy-policy" className="font-semibold underline">
+            Privacy Policy
+          </Link>{" "}
+          before submitting this form.
+        </p>
+      </div>
+    </details>
   );
 }
