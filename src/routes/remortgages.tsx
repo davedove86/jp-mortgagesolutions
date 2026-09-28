@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  IconCalendar,
+  IconCheckCircle,
   IconCoins,
-  IconLock,
-  IconPercent,
-  IconRepeat,
-  IconTrendUp,
+  IconHandshake,
+  IconThumbsUp,
+  IconUserSwitch,
 } from "@/components/site/icons";
 import { CenterHero, FeatureCard } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
@@ -43,7 +42,7 @@ function Remortgages() {
             <h2 className="text-3xl font-bold md:text-4xl">Why remortgage?</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <FeatureCard icon={<IconPercent />} title="Reduce your monthly payments">
+            <FeatureCard icon={<IconHandshake />} title="Reduce your monthly payments">
               You could lower your monthly payments by switching to a better
               interest rate.
             </FeatureCard>
@@ -51,11 +50,11 @@ function Remortgages() {
               Unlock the value in your home to fund home improvements, debt
               consolidation or other life goals.
             </FeatureCard>
-            <FeatureCard icon={<IconLock />} title="Fix your rate">
+            <FeatureCard icon={<IconThumbsUp />} title="Fix your rate">
               Move to a fixed rate deal for security and peace of mind knowing what
               you'll pay each month.
             </FeatureCard>
-            <FeatureCard icon={<IconRepeat />} title="Switch lender">
+            <FeatureCard icon={<IconUserSwitch />} title="Switch lender">
               If your current deal is ending, I'll compare the whole market to find
               you a better option.
             </FeatureCard>
@@ -74,7 +73,7 @@ function Remortgages() {
               <div className="mt-8 grid gap-6">
                 <div className="flex gap-4">
                   <span className="inline-flex size-10 shrink-0 text-primary">
-                    <IconCalendar />
+                    <IconCheckCircle />
                   </span>
                   <div>
                     <h3 className="font-bold">End of your current deal</h3>
@@ -83,7 +82,7 @@ function Remortgages() {
                 </div>
                 <div className="flex gap-4">
                   <span className="inline-flex size-10 shrink-0 text-primary">
-                    <IconTrendUp />
+                    <IconCheckCircle />
                   </span>
                   <div>
                     <h3 className="font-bold">If your circumstances change</h3>
@@ -94,7 +93,7 @@ function Remortgages() {
                 </div>
                 <div className="flex gap-4">
                   <span className="inline-flex size-10 shrink-0 text-primary">
-                    <IconCoins />
+                    <IconCheckCircle />
                   </span>
                   <div>
                     <h3 className="font-bold">If you want to release equity</h3>

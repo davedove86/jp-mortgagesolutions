@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  IconBank,
-  IconCertificate,
+  IconCertificateBold,
   IconClock,
+  IconHouseBold,
   IconMapPin,
-  IconShieldCheck,
+  IconShieldCheckBold,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement } from "@/components/site/compliance";
@@ -53,15 +53,15 @@ function AboutUs() {
               I have lived in Watford for the last 27 years and have a strong
               understanding of the local community.
             </FeatureCard>
-            <FeatureCard shadowed icon={<IconCertificate />} title="Fully Qualified">
+            <FeatureCard shadowed icon={<IconCertificateBold />} title="Fully Qualified">
               I am CeMAP and ceRER qualified, giving you professional and
               up-to-date advice you can rely on.
             </FeatureCard>
-            <FeatureCard shadowed icon={<IconShieldCheck />} title="FCA Registered">
+            <FeatureCard shadowed icon={<IconShieldCheckBold />} title="FCA Registered">
               I am FCA registered, so you can have complete confidence in the
               advice and service I provide.
             </FeatureCard>
-            <FeatureCard shadowed icon={<IconBank />} title="Whole of Market Advisor">
+            <FeatureCard shadowed icon={<IconHouseBold />} title="Whole of Market Advisor">
               I have access to a wide range of lenders to find the right solution
               for your needs.
             </FeatureCard>

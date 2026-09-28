@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import * as Accordion from "@radix-ui/react-accordion";
 import { SplitHero } from "@/components/site/page-hero";
 import { RiskWarnings } from "@/components/site/compliance";
+import { IconPlus } from "@/components/site/icons";
 import { BtnLink, Container } from "@/components/site/ui";
 
 export const Route = createFileRoute("/faqs")({
@@ -171,15 +172,8 @@ function Faqs() {
                 <Accordion.Header>
                   <Accordion.Trigger className="group flex w-full items-center justify-between gap-6 px-6 py-5 text-left font-semibold">
                     {item.q}
-                    <span className="inline-flex size-6 shrink-0 text-primary transition-transform group-data-[state=open]:rotate-180">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z"
-                          fill="currentColor"
-                        />
-                      </svg>
+                    <span className="inline-flex size-6 shrink-0 text-primary transition-transform group-data-[state=open]:rotate-45">
+                      <IconPlus />
                     </span>
                   </Accordion.Trigger>
                 </Accordion.Header>

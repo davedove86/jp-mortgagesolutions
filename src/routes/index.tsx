@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  IconBuildings,
+  IconArrowsClockwise,
   IconHammer,
+  IconHouseLine,
   IconKey,
-  IconRepeat,
 } from "@/components/site/icons";
 import { FeatureCard } from "@/components/site/page-hero";
 import { FeeStatement, FraudWarning, RiskWarnings } from "@/components/site/compliance";
@@ -78,13 +78,13 @@ function Home() {
             <FeatureCard icon={<IconKey />} title="First Time Buyers" href="/first-time-buyers">
               Let me guide you through the steps to owning your first home.
             </FeatureCard>
-            <FeatureCard icon={<IconRepeat />} title="Remortgages" href="/remortgages">
+            <FeatureCard icon={<IconArrowsClockwise />} title="Remortgages" href="/remortgages">
               Review your current deal and explore better options for your needs.
             </FeatureCard>
-            <FeatureCard icon={<IconBuildings />} title="Buy to Let" href="/buy-to-let-mortgages">
+            <FeatureCard icon={<IconHammer />} title="Buy to Let" href="/buy-to-let-mortgages">
               Mortgage advice for landlords and property investors.
             </FeatureCard>
-            <FeatureCard icon={<IconHammer />} title="New Build" href="/new-build-mortgages">
+            <FeatureCard icon={<IconHouseLine />} title="New Build" href="/new-build-mortgages">
               Expert advice to help you secure the right mortgage on your new home
             </FeatureCard>
           </div>

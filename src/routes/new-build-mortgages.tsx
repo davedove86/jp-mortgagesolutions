@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  IconHammer,
-  IconLeaf,
-  IconPercent,
-  IconTrendUp,
+  IconCertificateBold,
+  IconCheckCircle,
+  IconHouseBold,
+  IconMapPin,
+  IconShieldCheckBold,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
@@ -42,18 +43,18 @@ function NewBuild() {
             <h2 className="text-3xl font-bold md:text-4xl">Why Choose a new build?</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <FeatureCard icon={<IconHammer />} title="Start Your Journey">
+            <FeatureCard icon={<IconHouseBold />} title="Start Your Journey">
               Built to the latest standards with modern design and quality you can
               rely on.
             </FeatureCard>
-            <FeatureCard icon={<IconPercent />} title="Incentives available">
+            <FeatureCard icon={<IconMapPin />} title="Incentives available">
               Take advantage of schemes like Help to Buy and developer incentives.
             </FeatureCard>
-            <FeatureCard icon={<IconLeaf />} title="Energy efficient">
+            <FeatureCard icon={<IconCertificateBold />} title="Energy efficient">
               New builds are designed to be energy efficient, helping to lower
               bills.
             </FeatureCard>
-            <FeatureCard icon={<IconTrendUp />} title="Added value">
+            <FeatureCard icon={<IconShieldCheckBold />} title="Added value">
               High specification homes in great locations can support strong
               long-term value.
             </FeatureCard>
@@ -68,26 +69,41 @@ function NewBuild() {
               <Tagline>WHY CHOOSE JP MORTGAGE SOLUTIONS?</Tagline>
               <h2 className="text-3xl font-bold md:text-4xl">How I Can Help You</h2>
               <div className="mt-8 grid gap-6">
-                <div>
-                  <h3 className="font-bold">Whole of market search</h3>
-                  <p className="text-muted">
-                    I'll search thousands of deals to find the right mortgage for
-                    your new build.
-                  </p>
+                <div className="flex gap-4">
+                  <span className="inline-flex size-10 shrink-0 text-primary">
+                    <IconCheckCircle />
+                  </span>
+                  <div>
+                    <h3 className="font-bold">Whole of market search</h3>
+                    <p className="text-muted">
+                      I'll search thousands of deals to find the right mortgage for
+                      your new build.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold">Expert guidance</h3>
-                  <p className="text-muted">
-                    I'll guide you through the process from reservation to
-                    completion.
-                  </p>
+                <div className="flex gap-4">
+                  <span className="inline-flex size-10 shrink-0 text-primary">
+                    <IconCheckCircle />
+                  </span>
+                  <div>
+                    <h3 className="font-bold">Expert guidance</h3>
+                    <p className="text-muted">
+                      I'll guide you through the process from reservation to
+                      completion.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold">Ongoing support</h3>
-                  <p className="text-muted">
-                    I'm here to help, even after you've got the keys to your new
-                    home.
-                  </p>
+                <div className="flex gap-4">
+                  <span className="inline-flex size-10 shrink-0 text-primary">
+                    <IconCheckCircle />
+                  </span>
+                  <div>
+                    <h3 className="font-bold">Ongoing support</h3>
+                    <p className="text-muted">
+                      I'm here to help, even after you've got the keys to your new
+                      home.
+                    </p>
+                  </div>
                 </div>
               </div>
               <p className="mt-6 text-muted">

@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  IconBank,
-  IconBuildings,
-  IconCoins,
-  IconPercent,
-  IconTrendUp,
-  IconUsers,
+  IconChartLine,
+  IconChartPie,
+  IconCheckCircle,
+  IconCoinsBold,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
@@ -44,23 +42,23 @@ function BuyToLet() {
             <h2 className="text-3xl font-bold md:text-4xl">Why Buy To Let?</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <FeatureCard shadowed icon={<IconCoins />} title="Generate rental income">
+            <FeatureCard shadowed icon={<IconCoinsBold />} title="Generate rental income">
               Earn a steady income from tenants to help achieve your goals.
             </FeatureCard>
-            <FeatureCard shadowed icon={<IconTrendUp />} title="Build long-term wealth">
+            <FeatureCard shadowed icon={<IconChartLine />} title="Build long-term wealth">
               Property investment can increase in value over time and grow your
               assets.
             </FeatureCard>
             <FeatureCard
               shadowed
-              icon={<IconPercent />}
+              icon={<IconChartLine />}
               title="Tax efficient opportunities"
             >
               Benefit from potential tax advantages and allow expenses.
             </FeatureCard>
             <FeatureCard
               shadowed
-              icon={<IconBank />}
+              icon={<IconChartPie />}
               title="Diversify your portfolio"
             >
               Spread risk and create a balanced, resilient property portfolio.
@@ -85,7 +83,7 @@ function BuyToLet() {
               <div className="mt-8 grid gap-6">
                 <div>
                   <div className="mb-1 inline-flex size-10 text-primary">
-                    <IconUsers />
+                    <IconCheckCircle />
                   </div>
                   <h3 className="font-bold">First-time landlords</h3>
                   <p className="text-muted">
@@ -95,7 +93,7 @@ function BuyToLet() {
                 </div>
                 <div>
                   <div className="mb-1 inline-flex size-10 text-primary">
-                    <IconBuildings />
+                    <IconCheckCircle />
                   </div>
                   <h3 className="font-bold">Experienced investors</h3>
                   <p className="text-muted">
@@ -105,7 +103,7 @@ function BuyToLet() {
                 </div>
                 <div>
                   <div className="mb-1 inline-flex size-10 text-primary">
-                    <IconBank />
+                    <IconCheckCircle />
                   </div>
                   <h3 className="font-bold">Limited companies</h3>
                   <p className="text-muted">

@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  IconHouse,
-  IconPercent,
-  IconUsers,
-  IconWallet,
+  IconCar,
+  IconSealPercent,
+  IconTrendUp,
+  IconUsersThree,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
@@ -89,7 +89,7 @@ function FirstTimeBuyers() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <FeatureCard
               shadowed
-              icon={<IconWallet />}
+              icon={<IconTrendUp />}
               title="Increasing your borrowing capacity"
             >
               Some lenders can stretch your income to help you borrow more than you
@@ -97,7 +97,7 @@ function FirstTimeBuyers() {
             </FeatureCard>
             <FeatureCard
               shadowed
-              icon={<IconPercent />}
+              icon={<IconCar />}
               title="Lower Deposit Possibilities"
             >
               There are mortgages available with smaller deposits, making your first
@@ -105,7 +105,7 @@ function FirstTimeBuyers() {
             </FeatureCard>
             <FeatureCard
               shadowed
-              icon={<IconUsers />}
+              icon={<IconUsersThree />}
               title="Joint Borrow Sole Proprietor"
             >
               Add a family member or friend to boost your borrowing without them
@@ -113,7 +113,7 @@ function FirstTimeBuyers() {
             </FeatureCard>
             <FeatureCard
               shadowed
-              icon={<IconHouse />}
+              icon={<IconSealPercent />}
               title="Shared Ownership & New Build Initiatives"
             >
               Popular schemes can help you get on the ladder with a smaller deposit
