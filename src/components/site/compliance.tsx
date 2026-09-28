@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export function RiskWarnings({
   residential = false,
@@ -103,11 +105,23 @@ export function FraudWarning() {
 }
 
 export function JustInTimeNotice() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <details className="group border-2 border-fg bg-sand text-sm leading-relaxed text-fg">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 font-semibold [&::-webkit-details-marker]:hidden">
+    <div className="border-2 border-fg bg-sand text-sm leading-relaxed text-fg">
+      <button
+        type="button"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+        className="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left font-semibold"
+      >
         How we use your personal data
-        <span className="inline-flex size-5 shrink-0 text-primary transition-transform group-open:rotate-45">
+        <span
+          className={cn(
+            "inline-flex size-5 shrink-0 text-primary transition-transform duration-300 ease-in-out",
+            open && "rotate-45",
+          )}
+        >
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
             <path
               d="M25.3333 15.667V16.3336C25.3333 16.7018 25.0349 17.0003 24.6667 17.0003H17V24.667C17 25.0351 16.7015 25.3336 16.3333 25.3336H15.6667C15.2985 25.3336 15 25.0351 15 24.667V17.0003H7.3333C6.96511 17.0003 6.66663 16.7018 6.66663 16.3336V15.667C6.66663 15.2988 6.96511 15.0003 7.3333 15.0003H15V7.33365C15 6.96546 15.2985 6.66699 15.6667 6.66699H16.3333C16.7015 6.66699 17 6.96546 17 7.33365V15.0003H24.6667C25.0349 15.0003 25.3333 15.2988 25.3333 15.667Z"
@@ -115,8 +129,15 @@ export function JustInTimeNotice() {
             />
           </svg>
         </span>
-      </summary>
-      <div className="space-y-3 border-t border-fg px-4 py-4">
+      </button>
+      <div
+        className={cn(
+          "grid transition-[grid-template-rows] duration-300 ease-in-out",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="space-y-3 border-t border-fg px-4 py-4">
         <p>
           Jodi Pyle Limited (trading as JP Mortgage Solutions) will be the
           controller of the personal data you provide. We only collect basic
@@ -182,7 +203,9 @@ export function JustInTimeNotice() {
           </Link>{" "}
           before submitting this form.
         </p>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
   );
 }
