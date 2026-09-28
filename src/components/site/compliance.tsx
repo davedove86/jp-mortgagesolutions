@@ -60,8 +60,8 @@ export function FeeStatement() {
         <div className="container-site pb-4">
           <p className="border-2 border-fg p-6 text-base font-semibold leading-relaxed text-fg md:p-8">
             There may be a fee for arranging a mortgage. The precise amount will
-            depend on your circumstances and is typically £399. We will confirm
-            the fee, and when it is payable, before you decide to proceed.
+            depend on your circumstances and is typically £399, payable on
+            application. We will confirm the fee before you decide to proceed.
           </p>
         </div>
       </div>
