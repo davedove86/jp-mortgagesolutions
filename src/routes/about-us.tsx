@@ -10,14 +10,17 @@ import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { BtnLink, CheckItem, Container, CtaBanner, Tagline } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/about-us")({
   component: AboutUs,
-  head: () => ({
-    meta: [
-      { title: "About Us | JP Mortgage Solutions | Experienced Mortgage Advice" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "About Us | JP Mortgage Solutions",
+      description:
+        "Meet Jodi Pyle, a CeMAP and ceRER qualified mortgage adviser in Watford with over 30 years' experience. Whole-of-market advice from JP Mortgage Solutions.",
+      path: "/about-us",
+    }),
 });
 
 function AboutUs() {

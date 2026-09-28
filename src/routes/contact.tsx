@@ -4,12 +4,17 @@ import { IconEnvelope, IconPhone } from "@/components/site/icons";
 import { FraudWarning, JustInTimeNotice } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { Container, Tagline } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
-  head: () => ({
-    meta: [{ title: "Contact | JP Mortgage Solutions | Experienced Mortgage Advice" }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Contact | JP Mortgage Solutions",
+      description:
+        "Contact JP Mortgage Solutions in Watford on 07763 686547 or send an enquiry. Personal mortgage advice for buyers, remortgages, landlords and protection.",
+      path: "/contact",
+    }),
 });
 
 const enquiryTypes = [

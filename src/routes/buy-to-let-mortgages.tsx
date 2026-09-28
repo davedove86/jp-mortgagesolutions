@@ -8,16 +8,17 @@ import {
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { BtnLink, Container, CtaBanner, Tagline } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/buy-to-let-mortgages")({
   component: BuyToLet,
-  head: () => ({
-    meta: [
-      {
-        title: "Buy To Let Mortgages | JP Mortgage Solutions | Experienced Mortgage Advice",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "Buy to Let Mortgages | JP Mortgage Solutions",
+      description:
+        "Buy to let mortgage advice for landlords and property investors. JP Mortgage Solutions in Watford searches the whole market for rental and portfolio borrowing.",
+      path: "/buy-to-let-mortgages",
+    }),
 });
 
 function BuyToLet() {

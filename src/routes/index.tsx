@@ -9,12 +9,17 @@ import { FeatureCard } from "@/components/site/page-hero";
 import { FeeStatement, FraudWarning, RiskWarnings } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { BtnLink, CheckItem, Container, CtaBanner, Tagline } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   component: Home,
-  head: () => ({
-    meta: [{ title: "Home | JP Mortgage Solutions | Personal Mortgage Advice" }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Personal Mortgage Advice | JP Mortgage Solutions",
+      description:
+        "Personal mortgage advice in Watford from JP Mortgage Solutions. Whole-of-market help for first-time buyers, remortgages, buy to let, new builds and protection.",
+      path: "/",
+    }),
 });
 
 function Home() {

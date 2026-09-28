@@ -9,14 +9,17 @@ import {
 import { CenterHero, FeatureCard } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { BtnLink, Container, CtaBanner, Tagline } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/remortgages")({
   component: Remortgages,
-  head: () => ({
-    meta: [
-      { title: "Remortgages | JP Mortgage Solutions | Experienced Mortgage Advice" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "Remortgages | JP Mortgage Solutions",
+      description:
+        "Remortgage advice from JP Mortgage Solutions in Watford. Compare the whole market to reduce payments, fix your rate or release equity before your deal ends.",
+      path: "/remortgages",
+    }),
 });
 
 function Remortgages() {

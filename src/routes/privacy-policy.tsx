@@ -1,20 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Container } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy-policy")({
   component: PrivacyPolicy,
-  head: () => ({
-    meta: [
-      {
-        title: "Privacy Policy | JP Mortgage Solutions",
-      },
-      {
-        name: "description",
-        content:
-          "Privacy Policy of Jodi Pyle Limited, trading as JP Mortgage Solutions.",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "Privacy Policy | JP Mortgage Solutions",
+      description:
+        "Privacy Policy for Jodi Pyle Limited, trading as JP Mortgage Solutions. How we collect, use and keep your personal data, and how to contact us.",
+      path: "/privacy-policy",
+    }),
 });
 
 function PrivacyPolicy() {

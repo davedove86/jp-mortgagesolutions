@@ -4,12 +4,17 @@ import { SplitHero } from "@/components/site/page-hero";
 import { RiskWarnings } from "@/components/site/compliance";
 import { IconPlus } from "@/components/site/icons";
 import { BtnLink, Container } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/faqs")({
   component: Faqs,
-  head: () => ({
-    meta: [{ title: "FAQ | JP Mortgage Solutions | Experienced Mortgage Advice" }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Mortgage Advice FAQs | JP Mortgage Solutions",
+      description:
+        "Answers to common mortgage questions on fixed and tracker rates, credit history, age, self-employment and interest-only. From JP Mortgage Solutions.",
+      path: "/faqs",
+    }),
 });
 
 const faqs = [

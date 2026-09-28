@@ -9,16 +9,17 @@ import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { Container, CtaBanner } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/first-time-buyers")({
   component: FirstTimeBuyers,
-  head: () => ({
-    meta: [
-      {
-        title: "First Time Buyers | First Time Buyer Mortgages | JP Mortgage Solutions",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "First Time Buyer Mortgages | JP Mortgage Solutions",
+      description:
+        "First-time buyer mortgage advice in Watford. JP Mortgage Solutions searches the whole market and guides you from your first conversation through to completion.",
+      path: "/first-time-buyers",
+    }),
 });
 
 const steps = [

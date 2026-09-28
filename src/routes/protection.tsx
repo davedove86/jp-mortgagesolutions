@@ -3,12 +3,17 @@ import { IconCheckCircle } from "@/components/site/icons";
 import { FeatureCard } from "@/components/site/page-hero";
 import { RiskWarnings } from "@/components/site/compliance";
 import { Container, CtaBanner } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/protection")({
   component: Protection,
-  head: () => ({
-    meta: [{ title: "Protection | JP Mortgage Solutions" }],
-  }),
+  head: () =>
+    pageHead({
+      title: "Protection Advice | JP Mortgage Solutions",
+      description:
+        "Protection advice alongside your mortgage, including life cover, critical illness and income protection. Speak to JP Mortgage Solutions in Watford.",
+      path: "/protection",
+    }),
 });
 
 const products = [

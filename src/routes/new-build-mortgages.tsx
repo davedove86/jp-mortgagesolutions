@@ -9,16 +9,17 @@ import {
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
 import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { BtnLink, Container, CtaBanner, Tagline } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/new-build-mortgages")({
   component: NewBuild,
-  head: () => ({
-    meta: [
-      {
-        title: "New Build Mortgages | JP Mortgage Solutions | Experienced Mortgage Advice",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "New Build Mortgages | JP Mortgage Solutions",
+      description:
+        "New build mortgage advice in Watford. JP Mortgage Solutions helps you find the right mortgage for a new home, from reservation through to completion.",
+      path: "/new-build-mortgages",
+    }),
 });
 
 function NewBuild() {

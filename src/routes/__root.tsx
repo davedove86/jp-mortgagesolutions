@@ -2,11 +2,10 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteLayout } from "@/components/site/layout";
+import { businessJsonLd } from "@/lib/seo";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "JP Mortgage Solutions | Personal Mortgage Advice";
-const APP_DESC =
-  "Personal mortgage advice from JP Mortgage Solutions. Whole-of-market support for first-time buyers, remortgages, buy to let and new builds.";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,8 +13,8 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: APP_NAME },
-      { name: "description", content: APP_DESC },
       { name: "theme-color", content: "#a19356" },
+      { name: "author", content: "Jodi Pyle Limited" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -28,6 +27,12 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(businessJsonLd),
+      },
     ],
   }),
   component: RootDocument,

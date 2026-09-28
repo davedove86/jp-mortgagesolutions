@@ -1,17 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Container } from "@/components/site/ui";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/cookie-policy")({
   component: CookiePolicy,
-  head: () => ({
-    meta: [
-      { title: "Cookie Policy | JP Mortgage Solutions" },
-      {
-        name: "description",
-        content: "Cookie Policy for JP Mortgage Solutions.",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "Cookie Policy | JP Mortgage Solutions",
+      description:
+        "Cookie Policy for JP Mortgage Solutions. What cookies this website uses, how to accept or block them, and where to read the ICO cookie guidance.",
+      path: "/cookie-policy",
+    }),
 });
 
 function CookiePolicy() {
