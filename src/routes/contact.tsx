@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { type FormEvent, useState } from "react";
 import { IconEnvelope, IconPhone } from "@/components/site/icons";
+import { FraudWarning, JustInTimeNotice } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { Container, Tagline } from "@/components/site/ui";
 
@@ -113,6 +114,7 @@ function Contact() {
                   className="w-full rounded-none border border-fg bg-bg px-3 py-2 text-base"
                 />
               </div>
+              <JustInTimeNotice />
               <button
                 type="submit"
                 className="inline-flex items-center justify-center self-start rounded-lg border-2 border-primary bg-primary px-6 py-3 font-semibold text-primary-fg transition-colors hover:border-fg hover:bg-dark"
@@ -133,6 +135,7 @@ function Contact() {
           </div>
         </Container>
       </section>
+      <FraudWarning />
       <TrustBar />
     </>
   );

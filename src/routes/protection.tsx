@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { IconCheckCircle } from "@/components/site/icons";
 import { FeatureCard } from "@/components/site/page-hero";
+import { RiskWarnings } from "@/components/site/compliance";
 import { Container, CtaBanner } from "@/components/site/ui";
 
 export const Route = createFileRoute("/protection")({
@@ -51,13 +52,10 @@ function Protection() {
               />
             ))}
           </div>
-          <p className="mt-10 text-center text-sm text-muted">
-            Your home may be repossessed if you do not keep up your mortgage
-            repayments on your mortgage
-          </p>
         </Container>
       </section>
 
+      <RiskWarnings protection />
       <CtaBanner />
     </>
   );

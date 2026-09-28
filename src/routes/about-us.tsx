@@ -7,6 +7,7 @@ import {
   IconShieldCheck,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
+import { FeeStatement } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { BtnLink, CheckItem, Container, CtaBanner, Tagline } from "@/components/site/ui";
 
@@ -98,6 +99,7 @@ function AboutUs() {
         </Container>
       </section>
 
+      <FeeStatement />
       <CtaBanner />
     </>
   );

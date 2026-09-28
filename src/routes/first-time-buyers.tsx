@@ -6,6 +6,7 @@ import {
   IconWallet,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
+import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { Container, CtaBanner } from "@/components/site/ui";
 
@@ -122,6 +123,8 @@ function FirstTimeBuyers() {
         </Container>
       </section>
 
+      <RiskWarnings residential />
+      <FeeStatement />
       <CtaBanner />
     </>
   );

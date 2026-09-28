@@ -84,19 +84,29 @@ export function SiteFooter() {
           <div className="h-px w-full bg-muted" />
 
           <p className="mt-4 text-sm leading-relaxed">
-            JP Mortgage Solutions (Jodi Pyle Limited) is an Appointed Representative
-            of Stonebridge Mortgage Solutions Limited, which is authorised and
-            regulated by the Financial Conduct Authority under Firm Reference Number
-            454811. Jodi Pyle Limited is registered with the Financial Conduct
-            Authority under Firm Reference Number 1060045. Registered office: 18 St.
-            James Road, Watford, Hertfordshire, WD18 0EA, United Kingdom. Stonebridge
-            Mortgage Solutions Limited is registered in England. Registered office:
-            Suites 7 & 9 Regency House, Miles Gray Road, Basildon, Essex, SS14
-            3FR, United Kingdom.
+            JP Mortgage Solutions is a trading style of Jodi Pyle Limited, which is
+            an Appointed Representative of Stonebridge Mortgage Solutions Ltd,
+            which is authorised and regulated by the Financial Conduct Authority.
           </p>
-          <p className="mt-4 text-sm">
-            Your home may be repossessed if you do not keep up your mortgage
-            repayments on your mortgage.
+          <p className="mt-4 text-sm leading-relaxed">
+            Registered Office: Jodi Pyle Limited, 18 St. James Road, Watford,
+            England, WD18 0EA.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed">
+            Registered in England and Wales. Company number 11048520.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed">
+            Email:{" "}
+            <a
+              href="mailto:info@jp-mortgagesolutions.co.uk"
+              className="underline hover:text-bg"
+            >
+              info@jp-mortgagesolutions.co.uk
+            </a>{" "}
+            | Tel:{" "}
+            <a href="tel:07763686547" className="underline hover:text-bg">
+              07763 686547
+            </a>
           </p>
 
           <div className="mt-8 flex flex-col gap-3 text-sm md:flex-row md:items-center md:justify-between">
@@ -109,22 +119,12 @@ export function SiteFooter() {
               Website by Dove Design Ltd
             </a>
             <div className="flex flex-wrap gap-6">
-              <a
-                href="https://www.termsfeed.com/live/a0c52f05-3009-434b-9e94-f251e15eaa76"
-                className="underline hover:text-bg"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <Link to="/privacy-policy" className="underline hover:text-bg">
                 Privacy Policy
-              </a>
-              <a
-                href="https://www.termsfeed.com/live/dca928e1-89c9-4c3f-aee4-4a173a6f373d"
-                className="underline hover:text-bg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Cookies Settings
-              </a>
+              </Link>
+              <Link to="/cookie-policy" className="underline hover:text-bg">
+                Cookie Policy
+              </Link>
             </div>
           </div>
         </div>

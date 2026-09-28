@@ -6,6 +6,7 @@ import {
   IconRepeat,
 } from "@/components/site/icons";
 import { FeatureCard } from "@/components/site/page-hero";
+import { FeeStatement, FraudWarning, RiskWarnings } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
 import { BtnLink, CheckItem, Container, CtaBanner, Tagline } from "@/components/site/ui";
 
@@ -119,6 +120,9 @@ function Home() {
         </Container>
       </section>
 
+      <RiskWarnings residential remortgage buyToLet protection />
+      <FeeStatement />
+      <FraudWarning />
       <CtaBanner />
     </>
   );

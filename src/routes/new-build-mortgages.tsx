@@ -6,6 +6,7 @@ import {
   IconTrendUp,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
+import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { BtnLink, Container, CtaBanner, Tagline } from "@/components/site/ui";
 
 export const Route = createFileRoute("/new-build-mortgages")({
@@ -108,6 +109,8 @@ function NewBuild() {
         </Container>
       </section>
 
+      <RiskWarnings residential />
+      <FeeStatement />
       <CtaBanner />
     </>
   );

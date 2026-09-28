@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as Accordion from "@radix-ui/react-accordion";
 import { SplitHero } from "@/components/site/page-hero";
+import { RiskWarnings } from "@/components/site/compliance";
 import { BtnLink, Container } from "@/components/site/ui";
 
 export const Route = createFileRoute("/faqs")({
@@ -191,6 +192,7 @@ function Faqs() {
         </Container>
       </section>
 
+      <RiskWarnings residential remortgage buyToLet />
       <section className="bg-sand">
         <Container className="py-12 md:py-16">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CookieBanner } from "./cookie-banner";
 import { SiteFooter } from "./footer";
 import { SiteHeader } from "./header";
 
@@ -8,6 +9,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />
+      <CookieBanner />
     </div>
   );
 }

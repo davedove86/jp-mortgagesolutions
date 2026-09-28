@@ -8,6 +8,7 @@ import {
   IconUsers,
 } from "@/components/site/icons";
 import { FeatureCard, SplitHero } from "@/components/site/page-hero";
+import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { BtnLink, Container, CtaBanner, Tagline } from "@/components/site/ui";
 
 export const Route = createFileRoute("/buy-to-let-mortgages")({
@@ -127,6 +128,8 @@ function BuyToLet() {
         </Container>
       </section>
 
+      <RiskWarnings buyToLet />
+      <FeeStatement />
       <CtaBanner />
     </>
   );

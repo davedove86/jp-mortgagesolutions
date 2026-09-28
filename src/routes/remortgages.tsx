@@ -8,6 +8,7 @@ import {
   IconTrendUp,
 } from "@/components/site/icons";
 import { CenterHero, FeatureCard } from "@/components/site/page-hero";
+import { FeeStatement, RiskWarnings } from "@/components/site/compliance";
 import { BtnLink, Container, CtaBanner, Tagline } from "@/components/site/ui";
 
 export const Route = createFileRoute("/remortgages")({
@@ -123,6 +124,8 @@ function Remortgages() {
         </Container>
       </section>
 
+      <RiskWarnings residential remortgage />
+      <FeeStatement />
       <CtaBanner />
     </>
   );
