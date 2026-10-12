@@ -7,11 +7,13 @@ export function RiskWarnings({
   remortgage = false,
   buyToLet = false,
   protection = false,
+  debtConsolidation = false,
 }: {
   residential?: boolean;
   remortgage?: boolean;
   buyToLet?: boolean;
   protection?: boolean;
+  debtConsolidation?: boolean;
 }) {
   const items = [
     residential
@@ -28,6 +30,9 @@ export function RiskWarnings({
       : null,
     protection
       ? "As with all insurance policies, conditions and exclusions will apply."
+      : null,
+    debtConsolidation
+      ? "Think carefully before securing other debts against your home. The overall cost of repayment of other debts might be more when added to your mortgage. Your home might be repossessed if you do not keep up repayments on your mortgage."
       : null,
   ].filter(Boolean) as string[];
 

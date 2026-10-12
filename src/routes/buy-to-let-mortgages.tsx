@@ -79,7 +79,7 @@ function BuyToLet() {
             <div>
               <Tagline>Buy To Let Mortgages</Tagline>
               <h2 className="text-3xl font-bold md:text-4xl">
-                Who is Buy To Let Mortgages for?
+                Who are Buy to Let Mortgages for?
               </h2>
               <div className="mt-8 grid gap-6">
                 <div>

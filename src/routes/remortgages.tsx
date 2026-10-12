@@ -17,7 +17,7 @@ export const Route = createFileRoute("/remortgages")({
     pageHead({
       title: "Remortgages | JP Mortgage Solutions",
       description:
-        "Remortgage advice from JP Mortgage Solutions in Watford. Compare the whole market to reduce payments, fix your rate or release equity before your deal ends.",
+        "Remortgage advice from JP Mortgage Solutions in Watford. Compare the whole market to reduce payments, fix your rate or arrange additional borrowing before your deal ends.",
       path: "/remortgages",
     }),
 });
@@ -33,7 +33,7 @@ function Remortgages() {
       >
         <p>
           Remortgaging could save you money, reduce your monthly payments or
-          release equity to help you achieve your goals. I'll compare the whole
+          arrange additional borrowing to help you achieve your goals. I'll compare the whole
           market to find the right deal for you.
         </p>
       </CenterHero>
@@ -49,9 +49,9 @@ function Remortgages() {
               You could lower your monthly payments by switching to a better
               interest rate.
             </FeatureCard>
-            <FeatureCard icon={<IconCoins />} title="Release equity">
-              Unlock the value in your home to fund home improvements, debt
-              consolidation or other life goals.
+            <FeatureCard icon={<IconCoins />} title="Additional borrowing">
+              Borrow more against your home for home improvements, consolidating
+              other debts or other life goals.
             </FeatureCard>
             <FeatureCard icon={<IconThumbsUp />} title="Fix your rate">
               Move to a fixed rate deal for security and peace of mind knowing what
@@ -99,9 +99,9 @@ function Remortgages() {
                     <IconCheckCircle />
                   </span>
                   <div>
-                    <h3 className="font-bold">If you want to release equity</h3>
+                    <h3 className="font-bold">If you want additional borrowing</h3>
                     <p className="text-muted">
-                      To access funds for renovations, investments or other needs.
+                      To borrow more for renovations or other needs.
                     </p>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ function Remortgages() {
         </Container>
       </section>
 
-      <RiskWarnings residential remortgage />
+      <RiskWarnings residential remortgage debtConsolidation />
       <FeeStatement />
       <CtaBanner />
     </>

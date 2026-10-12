@@ -33,8 +33,8 @@ function NewBuild() {
       >
         <p>
           New build homes offer modern living, energy efficiency and peace of
-          mind. I'll help you find the right mortgage to make your move simple and
-          stress-free.
+          mind. I'll help you find the right mortgage and aim to make the mortgage
+          process as simple and stress-free as possible.
         </p>
       </SplitHero>
 

@@ -72,13 +72,14 @@ const faqs = [
           difficult for lenders to see if you are a ‘good payer’.
         </p>
         <p className="mb-3">
-          I work with lenders that will credit check, and not credit score.
+          I work with lenders who assess applications using a range of criteria and
+          do not rely solely on a credit score.
         </p>
         <p>
-          Maybe you have some blips and missed payments on your report. This is not
-          a problem. I work with adverse credit lenders who want to help. The
-          interest rate may be slightly higher, but this does not mean you can’t
-          get a mortgage.
+          Maybe you have some blips and missed payments on your report. There may
+          still be mortgage options available. I work with adverse credit lenders
+          who want to help. The interest rate may be higher, but this does not
+          mean you can’t get a mortgage.
         </p>
       </>
     ),
