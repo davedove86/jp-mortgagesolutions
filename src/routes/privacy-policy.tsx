@@ -8,7 +8,7 @@ export const Route = createFileRoute("/privacy-policy")({
     pageHead({
       title: "Privacy Policy | JP Mortgage Solutions",
       description:
-        "Privacy Policy for Jodi Pyle Limited, trading as JP Mortgage Solutions. How we collect, use and keep your personal data, and how to contact us.",
+        "Privacy notice of Jodi Pyle Limited, trading as JP Mortgage Solutions. How we record, use and protect information collected through this website.",
       path: "/privacy-policy",
     }),
 });
@@ -18,34 +18,17 @@ function PrivacyPolicy() {
     <section className="bg-bg">
       <Container className="py-16 md:py-20">
         <article className="mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-fg">
-          <p className="text-sm font-semibold tracking-wide text-primary uppercase">
-            Legal
-          </p>
           <h1 className="text-4xl font-semibold tracking-tight">Privacy Policy</h1>
           <p>
-            This is the privacy notice of Jodi Pyle Limited, trading as JP Mortgage
-            Solutions. In this document, “we” or “us” refers to Jodi Pyle Limited.
-          </p>
-          <p>
-            Jodi Pyle Limited is registered in England and Wales under company
-            number 11048520. Registered office: 18 St. James Road, Watford, England,
-            WD18 0EA.
+            This is the privacy notice of Jodi Pyle Limited. In this document, “we”
+            or “us” refers to Jodi Pyle Limited.
           </p>
           <p>
             JP Mortgage Solutions is a trading style of Jodi Pyle Limited, which is
-            an Appointed Representative of Stonebridge Mortgage Solutions Ltd, which
-            is authorised and regulated by the Financial Conduct Authority.
+            registered in England and Wales under company number 11048520.
           </p>
           <p>
-            Email:{" "}
-            <a className="underline" href="mailto:info@jp-mortgagesolutions.co.uk">
-              info@jp-mortgagesolutions.co.uk
-            </a>
-            <br />
-            Tel:{" "}
-            <a className="underline" href="tel:07763686547">
-              07763 686547
-            </a>
+            Registered office: 18 St. James Road, Watford, England, WD18 0EA.
           </p>
           <p>
             This is a notice to tell you our policy about all information that we
@@ -82,9 +65,9 @@ function PrivacyPolicy() {
           </h2>
           <p>This information is used:</p>
           <ul className="list-disc space-y-2 pl-6">
-            <li>to provide you with the services which you request;</li>
-            <li>for verifying your identity for security purposes;</li>
-            <li>for marketing our services and products.</li>
+            <li>to provide you with the services which you request</li>
+            <li>for verifying your identity for security purposes</li>
+            <li>for marketing our services and products</li>
           </ul>
           <p>
             Information which does not identify any individual may be used in a
@@ -101,31 +84,33 @@ function PrivacyPolicy() {
             to pass it to the relevant person.
           </p>
 
-          <h2 className="pt-2 text-2xl font-bold">Your domain name and email address</h2>
+          <h2 className="pt-2 text-2xl font-bold">Your domain name and e-mail address</h2>
           <p>
-            Your domain name and email address are recognised by our servers and
+            Your domain name and e-mail address are recognised by our servers and
             the pages that you visit are recorded. We shall not under any
-            circumstances divulge your email address to any person who is not an
+            circumstances divulge your e-mail address to any person who is not an
             employee or contractor of ours and who does not need to know, either
             generally or specifically.
           </p>
           <p>This information is used:</p>
           <ul className="list-disc space-y-2 pl-6">
-            <li>to correspond with you or deal with you as you expect;</li>
+            <li>to correspond with you or deal with you as you expect</li>
             <li>
               in a collective way not referable to any individual, for the purpose
-              of quality control and improvement of our site;
+              of quality control and improvement of our site
             </li>
-            <li>to send you news about the services to which you have signed up;</li>
-            <li>to tell you about other of our services.</li>
+            <li>to send you news about the services to which you have signed up</li>
+            <li>
+              to tell you about other of our services or services of sister websites
+            </li>
           </ul>
 
           <h2 className="pt-2 text-2xl font-bold">Information you post on our website</h2>
           <p>
-            Information you send to us by posting a message is stored on our
-            servers. We do not specifically use that information except to allow it
-            to be read, but you will see that we reserve a right to use it in any
-            way we decide.
+            Information you send to us by posting to a forum or blog is stored on
+            our servers. We do not specifically use of that information except to
+            allow it to be read, but you will see in our terms and conditions that
+            we reserve a right to use it in any way we decide.
           </p>
 
           <h2 className="pt-2 text-2xl font-bold">Website usage information</h2>
@@ -160,7 +145,7 @@ function PrivacyPolicy() {
             that automatically collects your IP address when they send an
             advertisement that appears on our site to your browser. They may also
             use other technology such as cookies or JavaScript to personalise the
-            content of, and to measure the performance of, their adverts. We do not
+            content of, and to measure the performance of their adverts. We do not
             have control over these technologies or the data that these parties
             obtain. Accordingly, this privacy notice does not cover the information
             practices of these third parties.
@@ -170,7 +155,7 @@ function PrivacyPolicy() {
           <p>
             We use cookies on our website. Please see our{" "}
             <Link to="/cookie-policy" className="font-semibold underline">
-              Cookie Policy
+              Cookies Policy
             </Link>{" "}
             for more information on how cookies work and how we use them.
           </p>
@@ -192,14 +177,11 @@ function PrivacyPolicy() {
           <p>
             We will never send you an email asking you to transfer deposit funds.
             If you ever receive an email from us which provides bank account
-            details for you to transfer money, please speak to us on{" "}
-            <a className="underline" href="tel:07763686547">
-              07763 686547
-            </a>{" "}
-            to confirm it is genuine.
+            details for you to transfer money, please speak to us on our main line
+            number to confirm it is genuine.
           </p>
 
-          <h2 className="pt-2 text-2xl font-bold">Sending a message to us</h2>
+          <h2 className="pt-2 text-2xl font-bold">Sending a message to our support system</h2>
           <p>
             When you send a message, we collect the data you have given to us in
             that message in order to obtain confirmation that you are entitled to
@@ -247,7 +229,7 @@ function PrivacyPolicy() {
             downloaded or used by other people, we accept no responsibility for
             what that third party may do with it. It is up to you to satisfy
             yourself about the privacy level of every person who might see your
-            information. If it is available to all the world, you have no control
+            information. If it is available to all the World, you have no control
             whatsoever as to how it is used.
           </p>
 
@@ -268,8 +250,22 @@ function PrivacyPolicy() {
             Although we do not disclose your personal information to any third
             party (except as set out in this notice), we do receive data which is
             indirectly made up from your personal information, from software
-            services such as website analytics and others. No such information is
+            services such as Google Analytics and others. No such information is
             identifiable to you.
+          </p>
+
+          <h2 className="pt-2 text-2xl font-bold">Affiliate information</h2>
+          <p>
+            This is information given to us by you in your capacity as an affiliate
+            of us or a customer or client of ours. Such information is retained for
+            business use only. We undertake to preserve the confidentiality of the
+            information and of the terms of our relationship. It is not used for
+            any other purpose. We expect any affiliate to agree to reciprocate this
+            policy. As an exception to this, we have the right to disclose your
+            first name and URL of your affiliate connection to other affiliates and
+            to any other person or organisation, on and off site. The reason is
+            solely to enable us to mention winners and others whose performance as
+            an affiliate is in some way outstanding.
           </p>
 
           <h2 className="pt-2 text-2xl font-bold">Disclosure to government and their agencies</h2>
@@ -287,7 +283,7 @@ function PrivacyPolicy() {
             information that we hold about you by contacting us at the address
             below. To better safeguard your information, we will also take
             reasonable steps to verify your identity before granting access or
-            making corrections to your information.
+            making corrections to your info
           </p>
           <p>
             Jodi Pyle Limited
@@ -299,6 +295,16 @@ function PrivacyPolicy() {
             England
             <br />
             WD18 0EA
+            <br />
+            Tel:{" "}
+            <a className="underline" href="tel:07763686547">
+              07763 686547
+            </a>
+            <br />
+            Email:{" "}
+            <a className="underline" href="mailto:info@jp-mortgagesolutions.co.uk">
+              info@jp-mortgagesolutions.co.uk
+            </a>
           </p>
 
           <h2 className="pt-2 text-2xl font-bold">Sale of your personal information</h2>
@@ -307,13 +313,13 @@ function PrivacyPolicy() {
             any of your information to any person outside our business.
           </p>
 
-          <h2 className="pt-2 text-2xl font-bold">Data may be processed outside the UK</h2>
+          <h2 className="pt-2 text-2xl font-bold">Data may be “processed” outside the UK</h2>
           <p>
-            Our website may be hosted in the UK or elsewhere. We also use
-            outsourced services in countries outside the UK from time to time in
-            other aspects of our business. Accordingly, data obtained within the UK
-            may be processed outside the UK and data obtained in any other country
-            may be processed within or outside that country.
+            Our websites are hosted in the EU. We also use outsourced services in
+            countries outside the EU from time to time in other aspects of our
+            business. Accordingly, data obtained within the UK may be “processed”
+            outside the UK and data obtained in any other country may be processed
+            within or outside that country.
           </p>
 
           <h2 className="pt-2 text-2xl font-bold">Compliance with the law</h2>
@@ -335,19 +341,6 @@ function PrivacyPolicy() {
             . To better safeguard your information, we will also take reasonable
             steps to verify your identity before granting access or making
             corrections to your information.
-          </p>
-          <p>
-            You have the right to complain to the Information Commissioner’s
-            Office:{" "}
-            <a
-              className="underline"
-              href="https://ico.org.uk"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://ico.org.uk
-            </a>
-            .
           </p>
 
           <h2 className="pt-2 text-2xl font-bold">Jurisdiction</h2>
@@ -379,6 +372,14 @@ function PrivacyPolicy() {
             require financial advice, please contact us.
           </p>
 
+          <h2 className="pt-2 text-2xl font-bold">Protection of log in details</h2>
+          <p>
+            We have security procedures in place to protect your log in details as
+            well as your personal information, but it is your responsibility to
+            ensure that you do not give out your log in details to any other
+            person, and to ensure that you log out of our website and delete
+            browser history before logging off if you are using a shared computer.
+          </p>
           <p>
             If you have any questions regarding this privacy policy, please contact
             us at{" "}
