@@ -17,6 +17,9 @@ export const Route = createFileRoute("/contact")({
     }),
 });
 
+/** Same Formspree form the Webflow build used (jp-mortgagesolutions.webflow.io/contact). */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwleznjo";
+
 const enquiryTypes = [
   "First Time Buyers",
   "Remortgaging",
@@ -27,16 +30,30 @@ const enquiryTypes = [
 
 function Contact() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitting, setSubmitting] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-    setStatus("success");
-    form.reset();
+    setSubmitting(true);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -76,7 +93,13 @@ function Contact() {
               </ul>
             </div>
 
-            <form onSubmit={onSubmit} className="grid gap-6" noValidate={false}>
+            <form
+              action={FORMSPREE_ENDPOINT}
+              method="POST"
+              onSubmit={onSubmit}
+              className="grid gap-6"
+              noValidate={false}
+            >
               <div className="grid gap-6 sm:grid-cols-2">
                 <Field label="First name" name="First-Name" required />
                 <Field label="Last name" name="Last-Name" required />
@@ -122,6 +145,7 @@ function Contact() {
               <JustInTimeNotice />
               <button
                 type="submit"
+                disabled={submitting}
                 className="inline-flex items-center justify-center self-start rounded-lg border-2 border-primary bg-primary px-6 py-3 font-semibold text-primary-fg transition-colors hover:border-fg hover:bg-dark"
               >
                 Submit Form
