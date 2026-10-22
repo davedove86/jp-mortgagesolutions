@@ -1,12 +1,13 @@
 /**
- * Single source of truth for platform head chrome (PWA, extensions.js, OG),
+ * Single source of truth for platform head chrome (PWA, OG),
  * shared by the Vite plugin and Nitro middleware. Plain ESM so `node --test`
  * and the Nitro bundler can both consume it.
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
-export const DEFAULT_APP_NAME = "Grok App";
+export const DEFAULT_APP_NAME = "JP Mortgage Solutions";
+export const DEFAULT_APP_SHORT_NAME = "JP Mortgage";
 export const OG_SERVICE_URL_DEFAULT = "https://og.grok.me";
 export const OG_SITE_REL_PATH = "src/lib/og/site.json";
 
@@ -162,7 +163,7 @@ export function renderWebManifest(hostHeader) {
   return JSON.stringify(
     {
       name,
-      short_name: name,
+      short_name: name === DEFAULT_APP_NAME ? DEFAULT_APP_SHORT_NAME : name,
       id: "/",
       start_url: "/",
       scope: "/",
@@ -200,8 +201,6 @@ export function grokPwaHeadTags(appName = DEFAULT_APP_NAME) {
   ];
 }
 
-export const GROK_EXTENSIONS_SCRIPT_SRC = "https://grok.com/grok-app-builder/extensions.js";
-
 export function readGrokProjectId() {
   const fromProcess = typeof process !== "undefined" ? process.env?.VITE_PROJECT_ID : "";
   return String(fromProcess ?? "").trim();
@@ -225,21 +224,6 @@ export function grokXCreatorHeadTags(creator = readXCreator(), creatorId = readX
     `<meta property="x:creator" content="${escapeHtml(name)}">`,
     `<meta property="x:creator:id" content="${escapeHtml(id)}">`,
   ];
-}
-
-/** Platform "Created with Grok" banner — injected into every HTML document. */
-export function grokExtensionsHeadTags(projectId = readGrokProjectId()) {
-  const id = escapeHtml(projectId);
-  const tags = [];
-  if (projectId) {
-    tags.push(`<meta name="grok-project-id" content="${id}">`);
-  }
-  tags.push(
-    `<script src="${GROK_EXTENSIONS_SCRIPT_SRC}"${
-      projectId ? ` data-project-id="${id}"` : ""
-    } defer></script>`,
-  );
-  return tags;
 }
 
 export function readOgSite(cwd = process.cwd()) {
@@ -447,11 +431,6 @@ export function injectGrokPwaHead(html, ctx = {}) {
     grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
   );
 
-  if (!next.includes("/grok-app-builder/extensions.js")) {
-    missing.push(...grokExtensionsHeadTags(projectId));
-  } else if (projectId && !next.includes('name="grok-project-id"')) {
-    missing.push(`<meta name="grok-project-id" content="${escapeHtml(projectId)}">`);
-  }
   if (
     projectId &&
     !next.includes('property="grok:app_id"') &&

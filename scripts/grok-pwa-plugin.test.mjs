@@ -25,16 +25,16 @@ test("injects before </head>", () => {
   const out = injectGrokPwaHead("<html><head><title>x</title></head><body></body></html>");
   assert.match(out, /rel="manifest"/);
   assert.match(out, /apple-touch-icon/);
-  assert.match(out, /grok-app-builder\/extensions\.js/);
+  assert.doesNotMatch(out, /grok-app-builder/);
   assert.ok(out.indexOf("manifest") < out.indexOf("</head>"));
 });
 
-test("injects the extensions script without a project id", () => {
+test("never injects the Grok badge script", () => {
   const out = injectGrokPwaHead("<html><head></head></html>", {
     appName: "Demo",
     projectId: "",
   });
-  assert.match(out, /src="https:\/\/grok\.com\/grok-app-builder\/extensions\.js" defer/);
+  assert.doesNotMatch(out, /grok-app-builder/);
   assert.doesNotMatch(out, /grok-project-id/);
   assert.doesNotMatch(out, /data-project-id/);
   assert.doesNotMatch(out, /property="grok:app_id"/);
@@ -45,8 +45,8 @@ test("injects project id on the script and meta when provided", () => {
     appName: "Demo",
     projectId: "proj-123",
   });
-  assert.match(out, /name="grok-project-id" content="proj-123"/);
-  assert.match(out, /data-project-id="proj-123"/);
+  assert.doesNotMatch(out, /grok-project-id/);
+  assert.doesNotMatch(out, /data-project-id/);
   assert.match(out, /property="grok:app_id" content="proj-123"/);
 });
 
@@ -235,12 +235,12 @@ test("does not emit x:game:image without a public host or banner", () => {
   assert.doesNotMatch(noBanner, /x:game:image/);
 });
 
-test("site title Grok App is a real name, not a sentinel", () => {
+test("site title Demo App is a real name, not a sentinel", () => {
   const out = injectGrokPwaHead("<html><head></head></html>", {
     host: "wild-race.grok.me",
-    site: { title: "Grok App" },
+    site: { title: "Demo App" },
   });
-  assert.match(out, /property="og:title" content="Grok App"/);
+  assert.match(out, /property="og:title" content="Demo App"/);
 });
 
 test("published grok.me slug is still a title fallback", () => {
@@ -380,12 +380,12 @@ test("streaming injector matches </HEAD> case-insensitively", () => {
   assert.match(out, /<body>hello<\/body>/);
 });
 
-test("does not duplicate the extensions script", () => {
+test("adds no badge script when run twice", () => {
   const ctx = { appName: "Demo", projectId: "proj-123" };
   const once = injectGrokPwaHead("<html><head></head></html>", ctx);
   const twice = injectGrokPwaHead(once, ctx);
   assert.equal(once, twice);
-  assert.equal(twice.split("extensions.js").length - 1, 1);
+  assert.doesNotMatch(twice, /grok-app-builder/);
 });
 
 test("is idempotent", () => {
@@ -449,14 +449,14 @@ test("strips install params from the app link", () => {
 });
 
 test("names the install page from host slug", () => {
-  assert.equal(appNameFromHost("localhost:8080"), "Grok App");
-  assert.equal(appNameFromHost("172.17.154.217:8080"), "Grok App");
+  assert.equal(appNameFromHost("localhost:8080"), "JP Mortgage Solutions");
+  assert.equal(appNameFromHost("172.17.154.217:8080"), "JP Mortgage Solutions");
   assert.equal(appNameFromHost("wild-race.grok.me"), "Wild Race");
 });
 
 test("rejects hosts that are not plain slugs", () => {
-  assert.equal(appNameFromHost("<script>alert(1)</script>"), "Grok App");
-  assert.equal(appNameFromHost('"><img src=x onerror=1>.grok.me'), "Grok App");
+  assert.equal(appNameFromHost("<script>alert(1)</script>"), "JP Mortgage Solutions");
+  assert.equal(appNameFromHost('"><img src=x onerror=1>.grok.me'), "JP Mortgage Solutions");
 });
 
 test("renders install page markup", () => {
@@ -504,3 +504,9 @@ test("vite plugin bakes og identity as a virtual module", () => {
   assert.match(plugin, /snapshotOgIdentity/);
 });
 
+
+test("default manifest uses the JP Mortgage Solutions name", () => {
+  const manifest = JSON.parse(renderWebManifest("jp-mortgagesolutions.co.uk"));
+  assert.equal(manifest.name, "JP Mortgage Solutions");
+  assert.equal(manifest.short_name, "JP Mortgage");
+});

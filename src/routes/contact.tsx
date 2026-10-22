@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { type FormEvent, useState } from "react";
+import type { FormEvent } from "react";
 import { IconEnvelope, IconPhone } from "@/components/site/icons";
 import { FraudWarning, JustInTimeNotice } from "@/components/site/compliance";
 import { TrustBar } from "@/components/site/trust-bar";
@@ -17,7 +17,9 @@ export const Route = createFileRoute("/contact")({
     }),
 });
 
-/** Same Formspree form the Webflow build used (jp-mortgagesolutions.webflow.io/contact). */
+/** Same Formspree form the Webflow build used (jp-mortgagesolutions.webflow.io/contact).
+ * Plain HTML POST: reCAPTCHA stays on in Formspree, so the browser goes to
+ * Formspree's captcha and thank-you page. */
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwleznjo";
 
 const enquiryTypes = [
@@ -29,31 +31,15 @@ const enquiryTypes = [
 ];
 
 function Contact() {
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const [submitting, setSubmitting] = useState(false);
-
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  // Formspree receives one "name" field. The visible First name / Last name
+  // inputs have no name attribute; this fills the hidden "name" input just
+  // before the browser's native POST (no preventDefault, no AJAX).
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     const form = e.currentTarget;
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    setSubmitting(true);
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
-      });
-      if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
-      setStatus("success");
-      form.reset();
-    } catch {
-      setStatus("error");
-    } finally {
-      setSubmitting(false);
-    }
+    const first = (form.querySelector("#First-Name") as HTMLInputElement | null)?.value ?? "";
+    const last = (form.querySelector("#Last-Name") as HTMLInputElement | null)?.value ?? "";
+    const hidden = form.querySelector('input[name="name"]') as HTMLInputElement | null;
+    if (hidden) hidden.value = `${first} ${last}`.trim();
   }
 
   return (
@@ -100,13 +86,19 @@ function Contact() {
               className="grid gap-6"
               noValidate={false}
             >
+              <input type="hidden" name="name" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New enquiry from jp-mortgagesolutions.co.uk"
+              />
               <div className="grid gap-6 sm:grid-cols-2">
-                <Field label="First name" name="First-Name" required />
-                <Field label="Last name" name="Last-Name" required />
+                <Field label="First name" id="First-Name" required />
+                <Field label="Last name" id="Last-Name" required />
               </div>
               <div className="grid gap-6 sm:grid-cols-2">
-                <Field label="Email" name="Email" type="email" required />
-                <Field label="Phone number" name="Phone" type="tel" required />
+                <Field label="Email" id="Email" name="email" type="email" required />
+                <Field label="Phone number" id="Phone" name="phone" type="tel" required />
               </div>
               <div>
                 <label htmlFor="Nature-of-your-enquiry" className="mb-2 block">
@@ -135,7 +127,7 @@ function Contact() {
                 </label>
                 <textarea
                   id="Message"
-                  name="Message"
+                  name="message"
                   required
                   placeholder="Type your message..."
                   rows={6}
@@ -145,21 +137,10 @@ function Contact() {
               <JustInTimeNotice />
               <button
                 type="submit"
-                disabled={submitting}
                 className="inline-flex items-center justify-center self-start rounded-lg border-2 border-primary bg-primary px-6 py-3 font-semibold text-primary-fg transition-colors hover:border-fg hover:bg-dark"
               >
                 Submit Form
               </button>
-              {status === "success" ? (
-                <p className="rounded-lg bg-sand px-4 py-3 font-medium text-fg" role="status">
-                  Thank you! Your submission has been received!
-                </p>
-              ) : null}
-              {status === "error" ? (
-                <p className="text-red-700" role="alert">
-                  Oops! Something went wrong while submitting the form.
-                </p>
-              ) : null}
             </form>
           </div>
         </Container>
@@ -172,16 +153,17 @@ function Contact() {
 
 function Field({
   label,
+  id,
   name,
   type = "text",
   required,
 }: {
   label: string;
-  name: string;
+  id: string;
+  name?: string;
   type?: string;
   required?: boolean;
 }) {
-  const id = name;
   return (
     <div>
       <label htmlFor={id} className="mb-2 block">
