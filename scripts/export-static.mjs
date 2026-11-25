@@ -59,7 +59,7 @@ try {
   rmSync(OUT, { recursive: true, force: true });
   mkdirSync(OUT, { recursive: true });
   cpSync(STATIC, OUT, { recursive: true });
-  rmSync(join(OUT, "__grok/install"), { recursive: true, force: true }); // Grok install page assets, not used
+  rmSync(join(OUT, "icons/install"), { recursive: true, force: true }); // install-page assets, not used
 
   for (const path of ROUTES) {
     const res = await fetch(base + path, { headers, redirect: "manual" });
@@ -79,10 +79,10 @@ try {
   writeFileSync(join(OUT, "404.html"), nfHtml);
   console.log("page  (not found)               -> 404.html");
 
-  const mf = await fetch(base + "/__grok/manifest.webmanifest", { headers });
+  const mf = await fetch(base + "/icons/manifest.webmanifest", { headers });
   if (!mf.ok) throw new Error("manifest fetch failed");
-  writeFileSync(join(OUT, "__grok/manifest.webmanifest"), await mf.text());
-  console.log("file  /__grok/manifest.webmanifest");
+  writeFileSync(join(OUT, "icons/manifest.webmanifest"), await mf.text());
+  console.log("file  /icons/manifest.webmanifest");
 
   cpSync(join(process.cwd(), "static-host/.htaccess"), join(OUT, ".htaccess"));
   console.log("file  .htaccess");
