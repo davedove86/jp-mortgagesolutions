@@ -40,10 +40,8 @@ const faqs = [
           Fixed rates will quite often come with a product fee and will have early
           repayment fees if you leave or repay early. Most lenders have an
           overpayment facility between 10-20% per year without any fees and these
-          rates are always portable. Meaning if you move home I can simply lift
-          that rate up and take it over to your new home without penalty. It is
-          important that your mortgage illustration is discussed fully and early
-          repayment fees explained.
+          rates are usually portable. It is important that your mortgage
+          illustration is discussed fully and early repayment fees explained.
         </p>
         <p className="mb-3 font-semibold">Tracker rates</p>
         <p className="mb-3">
